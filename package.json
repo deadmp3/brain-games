@@ -1,6 +1,6 @@
 {
   "name": "brain-games-sergey",
-  "version": "0.0.7",
+  "version": "0.0.10",
   "description": "",
   "main": "index.js",
   "files": [
@@ -13,7 +13,9 @@
     "prepublishOnly": "rm -rf dist && npm run build"
   },
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js"
   },
   "author": "",
   "license": "ISC",
