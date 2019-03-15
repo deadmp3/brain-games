@@ -5,7 +5,7 @@
 # Installation
 ```
 # Get the latest release of brain-games
-$ npm i brain-games-ivan -g 
+$ npm i brain-games-sergey -g 
 ```
 
 # Play
@@ -13,4 +13,5 @@ $ npm i brain-games-ivan -g
 # Run game:
 $ brain-games
 $ brain-even
+$ brain-gcd
 ```

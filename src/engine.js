@@ -17,9 +17,9 @@ const game = (nameGame, roundsLeft) => {
   return game(nameGame, roundsLeft - 1);
 };
 
-export default (nameGame) => {
+export default (nameGame, mission) => {
   console.log('Welcome to the Brain Games!');
-  console.log('Answer "yes" if number even otherwise answer "no".');
+  console.log(mission);
   console.log('');
   const username = readlineSync.question('May I have your name? ');
   console.log('');
