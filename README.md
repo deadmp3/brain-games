@@ -14,4 +14,7 @@ $ npm i brain-games-sergey -g
 $ brain-games
 $ brain-even
 $ brain-gcd
+$ brain-balance
+$ brain-progression
+$ brain-prime
 ```
