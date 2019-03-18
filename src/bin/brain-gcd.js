@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import playGame from '../engine';
+import gcd from '../games/gcd';
 
-playGame('gcd', 'Find the greatest common divisor of given numbers.');
+gcd();

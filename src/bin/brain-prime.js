@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import playGame from '../engine';
+import prime from '../games/prime';
 
-playGame('prime', 'Is this number prime?');
+prime();

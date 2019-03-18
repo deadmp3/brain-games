@@ -1,3 +1,5 @@
+import run from '../engine';
+
 const getGCD = (a, b) => {
   if (!(a && b)) {
     return a + b;
@@ -8,12 +10,16 @@ const getGCD = (a, b) => {
   return getGCD(a, b % a);
 };
 
-export default () => {
+const getRound = () => {
   const rndNum1 = Math.floor(Math.random() * 100);
   const rndNum2 = Math.floor(Math.random() * 100);
-  const correctAnswer = getGCD(rndNum1, rndNum2).toString();
   return {
     question: `${rndNum1} ${rndNum2}`,
-    correctAnswer,
+    correctAnswer: getGCD(rndNum1, rndNum2).toString(),
   };
 };
+
+export default () => run({
+  description: 'Answer "yes" if number even otherwise answer "no".',
+  getRound,
+});

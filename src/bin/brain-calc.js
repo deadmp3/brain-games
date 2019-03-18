@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import playGame from '../engine';
+import calc from '../games/calc';
 
-playGame('calc', 'What is the result of the expression?');
+calc();

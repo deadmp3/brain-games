@@ -1,30 +1,34 @@
 import readlineSync from 'readline-sync';
-import * as games from './games';
 
-const game = (nameGame, roundsLeft) => {
-  if (!roundsLeft) {
+const COUNTS_GAME = 3;
+
+const run = (getRound, countsGame = COUNTS_GAME) => {
+  if (!countsGame) {
     return true;
   }
-  const data = games[nameGame]();
-  console.log(`Question: ${data.question}`);
+  const { question, correctAnswer } = getRound();
+  console.log(`Question: ${question}`);
   const userAnswer = readlineSync.question('Your answer: ');
-  if (data.correctAnswer === userAnswer) {
+  if (correctAnswer === userAnswer) {
     console.log('Correct!');
   } else {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${data.correctAnswer}'`);
+    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
     return false;
   }
-  return game(nameGame, roundsLeft - 1);
+  return run(getRound, countsGame - 1);
 };
 
-export default (nameGame, mission) => {
+const isWin = result => result === COUNTS_GAME;
+
+export default ({ description, getRound }) => {
   console.log('Welcome to the Brain Games!');
-  console.log(mission);
+  console.log(description);
   console.log('');
-  const username = readlineSync.question('May I have your name? ');
+  const user = readlineSync.question('May I have your name? ');
   console.log('');
-  console.log(`Hello, ${username}!`);
-  if (game(nameGame, 3)) {
-    console.log(`Congratulations, ${username}!`);
+  console.log(`Hello, ${user}!`);
+  const result = run(getRound);
+  if (isWin(result)) {
+    console.log(`Congratulations, ${user}!`);
   }
 };

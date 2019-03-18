@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import playGame from '../engine';
+import balance from '../games/balance';
 
-playGame('balance', 'Balance the given number.');
+balance();

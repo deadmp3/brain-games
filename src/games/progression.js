@@ -1,6 +1,8 @@
+import run from '../engine';
+
 const fun = (first, step, n) => ((n !== 0) ? [first, ...fun(first + step, step, n - 1)] : []);
 
-export default () => {
+const getRound = () => {
   const first = Math.floor(Math.random() * 100);
   const step = Math.floor(Math.random() * 10);
   const n = 10;
@@ -13,3 +15,8 @@ export default () => {
     correctAnswer,
   };
 };
+
+export default () => run({
+  description: 'What number is missing in this progression?',
+  getRound,
+});

@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import playGame from '../engine';
+import progression from '../games/progression';
 
-playGame('progression', 'What number is missing in this progression?');
+progression();

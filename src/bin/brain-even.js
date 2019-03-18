@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import playGame from '../engine';
+import even from '../games/even';
 
-playGame('even', 'Answer "yes" if number even otherwise answer "no".');
+even();
